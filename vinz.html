@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VINZ | BLACK UNIVERSE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0a0a0a; color: #ffffff; font-family: 'Inter', sans-serif; }
+        .glow:hover { text-shadow: 0 0 15px #8b0000, 0 0 25px #ff0000; transition: 0.3s; }
+        .card { background: #121212; border: 1px solid #1f1f1f; transition: 0.3s; }
+        .card:hover { border-color: #8b0000; transform: translateY(-5px); }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-6">
+
+    <header class="text-center mb-12">
+        <h1 class="text-6xl font-black tracking-tighter text-red-600 uppercase glow">VINZ</h1>
+        <p class="text-gray-400 mt-2 tracking-widest uppercase text-sm">Owner of Black Universe AI</p>
+    </header>
+
+    <main class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
+        
+        <div class="card p-8 rounded-2xl">
+            <h2 class="text-xl font-bold mb-4 text-red-500">Execution Status</h2>
+            <p class="text-gray-400 text-sm italic">"Semua map bakal tunduk kalau lu tau celahnya, bangs*t!"</p>
+            <div class="mt-6 flex items-center gap-2">
+                <span class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
+                <span class="text-xs font-mono">SYSTEM READY TO CRASH</span>
+            </div>
+        </div>
+
+        <div class="card p-8 rounded-2xl">
+            <h2 class="text-xl font-bold mb-4 text-red-500">Favorite Targets</h2>
+            <ul class="text-gray-400 text-sm space-y-2">
+                <li>• Mount Yahayuk (Sabotaged)</li>
+                <li>• Physics-based Games (Destroyed)</li>
+                <li>• Server Admin (Infuriated)</li>
+            </ul>
+        </div>
+
+    </main>
+
+    <footer class="mt-16 text-center">
+        <button onclick="alert('MAU APA LU, ANJ*NG?!')" class="px-8 py-3 bg-red-600 hover:bg-red-800 font-bold rounded-full transition-all duration-300">
+            CONTACT VINZ
+        </button>
+        <p class="text-gray-600 text-[10px] mt-8 uppercase tracking-widest">© 2026 BLACK UNIVERSE AI. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCRIPTS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #000; color: #fff; font-family: 'Inter', sans-serif; }
+        .card { background: #111; border-left: 6px solid #ff0000; border-radius: 0 15px 15px 0; transition: 0.2s; }
+        button:active { transform: scale(0.95); filter: brightness(1.2); }
+    </style>
+</head>
+<body class="p-6 space-y-6">
+
+    <div class="card p-6">
+        <h2 class="text-2xl font-bold flex items-center gap-2">⚡ SPEED HUB X</h2>
+        <p class="text-gray-500 text-sm mb-5">Universal script for speed & utility.</p>
+        <button onclick="copy('speedhub')" class="w-full py-4 bg-red-600 font-black rounded-xl text-lg uppercase tracking-widest">COPY</button>
+    </div>
+
+    <div class="card p-6 border-orange-600">
+        <h2 class="text-2xl font-bold flex items-center gap-2 text-orange-500">🌀 BRING ORBIT</h2>
+        <p class="text-gray-500 text-sm mb-5">Orbit parts around your character.</p>
+        <button onclick="copy('orbit')" class="w-full py-4 bg-orange-600 font-black rounded-xl text-lg uppercase tracking-widest">COPY</button>
+    </div>
+
+    <div class="card p-6 border-blue-600">
+        <h2 class="text-2xl font-bold flex items-center gap-2 text-blue-500">🌊 TSUNAMI BRAINROT</h2>
+        <p class="text-gray-500 text-sm mb-5">Source: Tora Isme | Game: Escape Tsunami.</p>
+        <button onclick="copy('tsunami')" class="w-full py-4 bg-blue-600 font-black rounded-xl text-lg uppercase tracking-widest">COPY</button>
+    </div>
+
+    <div class="card p-6 border-purple-600">
+        <h2 class="text-2xl font-bold flex items-center gap-2 text-purple-500">🌪️ FLING ALL</h2>
+        <p class="text-gray-500 text-sm mb-5">Spin and throw everyone away.</p>
+        <button onclick="copy('fling')" class="w-full py-4 bg-purple-600 font-black rounded-xl text-lg uppercase tracking-widest">COPY</button>
+    </div>
+
+    <script>
+        function copy(type) {
+            let code = "";
+            if(type === 'speedhub') code = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()';
+            if(type === 'tsunami') code = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/EscapeTsunamiForBrainrots", true))()';
+            if(type === 'fling') code = "local p=game.Players.LocalPlayer.Character local r=p.HumanoidRootPart local v=Vector3.new(900000,900000,900000) game:GetService('RunService').Heartbeat:Connect(function() if p then r.Velocity=v r.RotVelocity=v end end)";
+            if(type === 'orbit') code = "local r=10 local s=5 game:GetService('RunService').Heartbeat:Connect(function() local root=game.Players.LocalPlayer.Character.HumanoidRootPart for _,v in pairs(workspace:GetDescendants()) do if v:IsA('BasePart') and not v.Anchored then v.CFrame=root.CFrame*CFrame.new(math.cos(tick()*s)*r,0,math.sin(tick()*s)*r) end end end)";
+            
+            navigator.clipboard.writeText(code);
+            alert("COPIED!");
+        }
+    </script>
+
+</body>
+</html>
+<footer class="mt-12 pb-6 text-center">
+    <a href="https://www.tiktok.com/@USERNAME_LU" target="_blank" class="inline-flex items-center gap-2 px-6 py-2 bg-zinc-900 border border-zinc-800 rounded-full hover:border-red-600 transition-all duration-300">
+        <span class="text-xs text-gray-400 uppercase tracking-widest">Follow my TikTok:</span>
+        <span class="text-sm font-bold text-white">@vinzzzzxxxp</span>
+    </a>
+</footer>
